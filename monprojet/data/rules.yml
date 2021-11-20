@@ -1,0 +1,57 @@
+
+- rule: Activate form
+  steps:
+  - intent: utter_confirmer_commande
+  - action: form_commande_pizza
+  - active_loop: form_commande_pizza
+
+
+- rule: a chaque fois que l'utilisateur demande le menu l'assistant lui envoie le menue
+  steps:
+  - intent: demande_menu
+  - action: utter_dire_menu
+
+  
+- rule:  a chaque fois l'utilisateur dit salue 
+  steps:
+  - intent: saluer
+  - action: utter_bienvenu_salut
+
+- rule: demande de livraison de commande*
+  steps:
+  - action: utter_demande_empo_ou_livrai
+  - intent: livraison
+  - action: utter_address_livraison
+  - intent: dire_addresse
+  - action: Utter_commde_pret
+
+- rule :  si l'utilisateur choisie  l'option emporter_home
+  steps:
+    - action: utter_demande_empo_ou_livrai
+    - intent: emporter_home
+    - action: Utter_commde_pret
+ 
+- rule: formulaire du pizza 
+  steps:
+    - intent: commander
+    - action: form_commande_pizza
+    - active_loop: form_commande_pizza
+  
+- rule: valider le formulaire
+  condition :
+    - active_loop: form_commande_pizza
+  steps:
+    - action: form_commande_pizza
+    - active_loop: null
+    - slot_was_set :
+      - recupere_slot : null
+    - action: utter_submit
+    - action: utter_confirmer_commande
+
+
+
+  
+  
+
+ 
+

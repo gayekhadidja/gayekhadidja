@@ -1,0 +1,147 @@
+version: "2.0"
+stories:
+- story: path1 salut_achat
+  steps:
+  - intent: saluer
+  - action: utter_bienvenu_salut
+  - intent: question_pizza
+  - action: utter_question_pizza
+  - intent: demande_menu
+  - action: utter_dire_menu
+  - intent: commander
+  - action: utter_demande_type
+  - intent: dire_type
+  - action: utter_demande_nombre
+  - intent: commander
+  - action: utter_confirmer_cont
+  - intent: confirmer
+  - action: utter_demande_empo_ou_livrai
+  - intent: emporter_home
+  - action: utter_demande_nom_num
+  - intent: nom_et_telephone
+  - action: utter_traitement_commde
+  - action: Utter_commde_pret
+  - intent: bye
+
+
+- story: salut_acht_livraison
+  steps:
+  - intent: saluer
+  - action: utter_bienvenu_salut
+  - intent: question_pizza
+  - action: utter_question_pizza
+  - intent: demande_menu
+  - action: utter_dire_menu
+  - intent: commander
+  - action: utter_demande_type
+  - intent: dire_type
+  - action: utter_demande_nombre
+  - intent: commander
+  - action: utter_confirmer_cont
+  - intent: confirmer
+  - action: utter_demande_empo_ou_livrai
+  - intent: livraison_commande
+  - action: utter_address_livraison
+  - intent: dire_addresse
+  - action: utter_ajouter_commande
+  - intent: refuser
+  - intent: content
+  - action: utter_demande_nom_num
+  - intent: nom_et_telephone
+  - action: utter_traitement_commde
+
+
+- story: sad 
+  steps:
+  - intent: saluer
+  - action: utter_bienvenu_salut
+  - intent: question_pizza
+  - action: utter_question_pizza
+  - intent: demande_menu
+  - action: utter_dire_menu
+  - intent: commander
+  - action: utter_demande_type
+  - intent: dire_type
+  - action: utter_demande_nombre
+  - intent: commander
+  - action: utter_ajouter_commande
+  - intent: change_commande
+  - action: utter_changement_commande
+  - intent: question_pizza
+  - action: utter_pizza_disponible
+  - intent: commander
+  - action: utter_confirmer_cont
+  - intent: confirmer
+  - action: utter_demande_empo_ou_livrai
+  - action: utter_demande_nom_num
+  - intent: nom_et_telephone
+  - action: Utter_commde_pret
+
+
+- story: saluer_commande_livraison
+  steps:
+  - intent: saluer
+  - action: utter_bienvenu_salut
+  - intent: demande_menu
+  - action: utter_dire_menu
+  - intent: commander
+    entities: 
+    - type: "reine"
+    - nombre : "2"
+  - action: utter_confirmer_commande
+  - intent: confirmer
+  - action: utter_ajouter_commande 
+  - intent:  refuser
+  - action: utter_demande_nom_num
+  - intent: nom_et_telephone
+  - action: utter_demande_empo_ou_livrai
+  - intent: livraison_commande
+  - action: utter_address_livraison
+  - intent: dire_addresse
+  - action: Utter_commde_pret
+  - intent: content
+  - action: utter_confirmer_cont
+
+
+- story: salut_commande_changementcommande_emporter
+  steps:
+  - intent: saluer
+  - action: utter_bienvenu_salut
+  - intent: question_pizza
+  - action: utter_question_pizza
+  - intent: commander
+    entities: 
+    - nombre: "2"
+  - action: utter_demande_taille
+  - intent: dire_taille
+  - action: utter_demande_type
+  - intent: dire_type
+  - action: utter_confirmer_commande
+  - intent: change_commande
+  - action: utter_dire_menu
+  - intent: commander
+  - action: utter_changement_commande
+  - action: utter_conFirmer_chang_commande
+  - intent: confirmer
+  - action: utter_confirmer_commande
+  - intent: confirmer
+  - action: utter_demande_nom_num
+  - intent: nom_et_telephone
+  - action: utter_demande_empo_ou_livrai
+  - intent: emporter_home
+  - action: utter_traitement_commde
+  - intent: confirmer
+  - action: Utter_commde_pret 
+  - intent: bye
+
+
+
+
+   
+
+
+  
+  
+
+
+ 

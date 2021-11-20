@@ -1,0 +1,266 @@
+version: "2.0"
+nlu:
+- intent: saluer
+  examples: |
+    - he
+    - salut
+    - Bonjour
+    - bonjour le robot
+    - salut bot
+    - salut quoi de neuf
+    - j'espere que tu va bien
+    - bonjour comment vas tu
+    - hey
+    - hi
+    - bonsoir
+    - bonsoir comment vous aller
+    - bonjour
+- intent: commande_init
+  examples: |
+    - je veux un pizza
+    - je veux commander un pizza
+    - je veux un pizza avec sauce tomate
+    - j'aimerai avoir des pizza petit model
+    - pizza
+    - pizza petit modele
+    - pizza grand modele svp
+    - j'ai fain , pizza
+    - j'aimerai commander un pizza
+    - pizza svp
+    - je veux des pizza avec des olives
+    - je veut des pizza GM
+    - je veux commander des pizza grand modele
+    - je veux des pizza avec des oignons
+    - je veux des pizza avec {ingredient}
+    - je veux pizza
+- intent: commander
+  examples: |
+    - je veux  une pizza [reine ](taille)
+    - [deux](nombre)  pizza de taille [petit](taille) [reine](type)
+    - [2](nombre)  pizza de taille [grand](taille) [chawarma](type)
+    - [trois](nombre)  pizza de taille [moyenne](taille) [marguerita](type)
+    - [deux](nombre)  pizza de taille [PM](taille) [poulet](type)
+    - [2](nombre) pizza au [framage](type) et [un](nombre) [fruit de mer] de [petit](taille)
+    - je veux [2] pizza  [moyen](taille) [margarita](type) et [reine](type)
+    - avez vous [une](nombre) pizza au [fromage] (type)
+    - je veux  [3](nombre) pizza [americain] taille [petit](taille) et [rene](type)
+    - je veux  [2](nombre) pizza [margarita] taille [GM](taille)
+    - [deux](nombre) [vegetarienne] [PM]
+    - [deux](nombre) [marguerita] [GM]
+    - [deux](nombre) [reine](type) [moyenne](taille)
+    - 
+    - [1](nombre) [chawarma](type) et [1](nombre) [vegetarienne]
+    - [un ](nombre) pizza [poulet](taille ) [gm](taille)
+    - [un](nombre) pizza [pm](taille) [marguerita] s'il vous plait
+    - [2](nombre) []
+    - je veux commander [un ](nombre) pizza [rene](type) [petit] (taille) format
+    - [petit](taille) pizza [framage](type) [2](nombre)
+    - [reine](type)  [petit model](taille)
+    - [reine](type)  [petit model](taille) SVP
+    - [2](nombre) [reine](type)  [petit model](taille)
+    - [1](nombre) [reine](type)  [marguerita] [petit model](taille)
+    - [marguerita](type) [trois](nombre) [grand](taille) format
+    - pizza [vegetarien](type) [grand](taille) [2](nombre)
+- intent: question_pizza
+  examples: |
+    - avez-vous une pizza sans [viande](ingredient)
+    - avez-vous une pizza sans [fromage](type)
+    - avez-vous une pizza sans [legumes](ingredient)
+    - avez-vous une pizza sans [poivre](ingredient)
+    - avez-vous une pizza avec [viande]ingredient)
+    - avez-vous une pizza avec [fromage](typet)
+    - avez-vous une pizza avec [legumes](ingredient)
+    - avez-vous une pizza avec [poivre](ingredient)
+    - avez-vous une pizza sans [viande](ingredient) s'il vous plaît ?
+    - avez-vous une pizza sans [fromage](type)s'il vous plaît ?
+    - avez-vous une pizza sans [legumes](ingredient)s'il vous plaît ?
+    - avez-vous une pizza sans [poivre](ingredient)s'il vous plaît ?
+    - avez-vous une pizza avec [viande](ingredient) s'il vous plaît ?
+    - avez-vous une pizza avec [fromage](type) s'il vous plaît ?
+    - avez-vous une pizza avec [legumes](ingredient) s'il vous plaît ?
+    - avez-vous une pizza avec [poivre](ingredient )s'il vous plaît ?
+    - pizza [poulet] (ingredient)
+    - pizza [legumes](ingredient)
+    - pizza sans [poivre](ingredient) s'il vous plait ?
+    - pizza sans [légumes]ingredient) s'il vous plait ?
+    - pizza sans [viande](ingredient) s'il vous plait ?
+    - je veux des pizzas avec de [oignons](ingredient) [sauce  tomate](type)
+- intent: change_commande
+  examples: |
+    - J'ai changé d'avis. Puis-je obtenir un [champignon](type) à la place ?
+    - Je préfère une pizza [margherita](type) .
+    - Je préfère une pizza [margarita](type) .
+    - en fait, je voudrais une [petite](taille) pizza.
+    - en fait, je voudrais une [grand](taille) pizza.
+    - je veux un pizza [reine ](type)
+    - en fait, je voudrais un [petit](taille) [végétarien](type)
+    - Je veux changer la taille [moyenne](taille)
+    - Je veux changer la taille  [grande](taille)
+    - Je veux changer la taille  [PM](taille)
+    - Je veux changer la taille  [GM](taille)
+    - Je veux changer la taille  [M](taille)
+    - j'ai changer d'avis je veux [rene](type) à la place
+    - je veux un [rene](type) à la place
+    - je veux un [PM](taille) à la place
+    - je veux le [moyen](taille) en [petit](taille)
+- intent: confirmer
+  examples: |
+    - oui s'ilvous plait
+    - Pourquoi pqs
+    - oui veiller suivre la reservation
+    - oui j'aimerai bien reserver
+    - ouais
+    - vous continuez avec la réservation
+    - ce serait génial si vous pouvez faire la réservation ici
+    - oh super, s'il te plait fais-le pour moi
+    - oui
+    - en effet
+    - bien sur
+    - ça sonne bien
+    - oui ça m'a beaucoup aidé merci
+    - oui, c'est fait, merci beaucoup
+    - ouais merci
+    - c'est bon
+    - oui c'est fait
+    - oui s'ils vous plait
+- intent: refuser
+  examples: |
+    - je ne pense pas
+    - pas vraiment
+    - pas moyen
+    - je ne connais pas ma position
+    - je ne suis pas sûr de ma position
+    - je ne sais pas
+    - je ne suis pas nouveau ici
+    - aucune idée
+    - pas sûr
+    - pouvez-vous m'aider avec l'emplacement je suis nouveau ici
+    - non
+    - je ne connais pas l'emplacement
+    - je ne suis pas encore sûr de mon emplacement
+    - je ne suis pas sûr
+- intent: demande_menu
+  examples: |
+    - pourez je voir le menu
+    - menu SVP
+    - liste de pizza
+    - je veux des pizza , le menu de pizza SVP
+    - menu
+- intent: content
+  examples: |
+    - Parfait
+    - tres bien
+    - super
+    - incroyable
+    - merveilleux
+    - je vais bien
+    - bien
+- intent: dire_taille
+  examples: |
+    - petit
+    - moyen
+    - grand
+    - PM
+    - GM
+    - medium
+- intent: nom_et_telephone
+  examples: |
+    - oui veuillez le noter, c'est [ 8724537891 ](phone)  le nom c'est [modou](nom)
+    - c'est [ 1010653781 ](phone)  [fatou](nom)
+    - oui, bien sûr [ 9711236622 ](phone) [ifeoma](nom)
+    - [ 8700981533 ](phone) [moustapha](nom)
+- intent: emporter_home
+  examples: |
+    - emporter_home
+    - empoter SVP
+- intent: livraison_commande
+  examples: |
+    - livraison SVP
+    - livraison s'il vous plait
+    - je prefere livraison
+- intent: dire_nombreS
+  examples: |
+    - [un](nombre)
+    - [deux](nombre)
+    - [trois](nombre)
+    - [quatre](nombre)
+    - [cinq](nombre)
+    - [1](nombre)
+    - [2](nombre)
+    - [3](nombre)
+    - [4](nombre)
+    - [5](nombre)
+- intent: dire_addresse
+  examples: |
+    - [baobab] (addresse)
+    - [karac](addresse)
+    - [sacre coeur](adrere)
+- intent: dire_type
+  examples: |
+    - [margarita](type)
+    - [rene](type)
+    - [shwarma](type)
+    - je veux un pizza
+- intent: demande_prix
+  examples: |
+    - c'est a combien le petit
+    - c'est a combien le grand
+    - c'est a combien le moyen
+- intent: bye
+  examples: |
+    - au revoir
+    - a bientot
+    - a plus tard
+    - au revoir a bientot
+    - au revoir prenez soin de vous à bientôt
+    - c'est gentil de te parler
+    - au revoir, je te reparle plus tard
+    - oui merci
+- synonym: margarita
+  examples: |
+    - margherita
+    - margharita
+- synonym: moyen
+  examples: |
+    - moyenne
+    - MM
+- synonym: grand
+  examples: |
+    - grande
+    - GM
+- synonym: petit
+  examples: |
+    - PM
+    - petite modele
+- lookup: type
+  examples: |
+    - marguerita
+    - fromage
+    - chawarma
+    - vegetarien
+    - reine
+    - pizza poulet
+    - fruit de mer
+- lookup: ingredient
+  examples: |
+    - viande
+    - poivre
+    - legumes
+    - poulet
+    - sauce basilic
+    - sauce tomate
+    - champignons
+    - jambons
+    - mozzarelle
+    - merguez
+    - oignons
+- lookup: taille
+  examples: |
+    - petit
+    - grand
+    - moyen
+- lookup: montant
+  examples: |
+    - 2500
+    - 4000
+    - 6000
